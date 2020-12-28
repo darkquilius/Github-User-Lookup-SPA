@@ -1,3 +1,9 @@
+## Deployed Site
+
+## mock login:
+### user: test@test.com
+### pw:   Abcd1234
+
 ## Personal Notes
 
 This application allows users to look up other github users info and display it through a number of mediums using fusion charts. 
