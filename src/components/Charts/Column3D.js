@@ -68,7 +68,7 @@ const Pie3D = ({data}) => {
         yAxisNameFontSize: "16px",
         theme: "fusion",
         paletteColors: colorString,
-        pieRadius: "25%"
+        columnRadius: "15%"
       },
       // Chart Data
       data

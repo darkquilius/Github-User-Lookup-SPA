@@ -4,6 +4,7 @@ import {useGlobalContext } from '../context/context';
 import {Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
   const {repos} = useGlobalContext();
+  console.log(repos)
 
   let languages = repos.reduce((total, item) => {
     const {language} = item;
@@ -30,9 +31,14 @@ const Repos = () => {
     if(!name) {
       return total
     };
-    total[name]?
-      total[name] = {label: name, value: total[name].value + stargazers_count}
-      : total[name ] = {label: name , value: 1};
+    total[name] = {label: name, value: stargazers_count}
+    if(total[name].value === 0){
+      total[name].value = 1
+    }
+
+    // total[name]?
+    //   total[name] = {label: name, value: total[name].value + stargazers_count}
+    //   : total[name ] = {label: name , value: 1};
     return total;
   }, {})
 
@@ -41,11 +47,25 @@ const Repos = () => {
     if(!name) {
       return total
     };
-    total[name]?
-      total[name] = {label: name, value: total[name].value + forks}
-      : total[name ] = {label: name , value: 1};
+    total[name] = {label: name, value: forks}
+    
+    if(total[name].value === 0){
+      total[name].value = 1
+    }
+
     return total;
   }, {})
+
+  // let {stars, forks} =repos.reduce((total, item) => {
+  //   const {stargazers_count, name, forks} = item;
+  //   total.stars[stargazers_count] = {
+  //     label:name,
+  //     value:stargazers_count}
+  //   return total
+  // }, {
+  //   stars: {},
+  //   forks: {}
+  // })
 
   // STEP 2 - Chart Data
 // const chartData = [
@@ -61,8 +81,11 @@ const Repos = () => {
 
 const pie3dData = Object.values(languages);
 const doughnut2dData = Object.values(stars);
-const column3dData = Object.values(repoStars).slice(-4).reverse();
-const bar3dData = Object.values(forks).slice(-4).reverse();
+const column3dData = Object.values(repoStars).sort((a,b) => {return a.value-b.value}).slice(-4).reverse();
+const bar3dData = Object.values(forks).sort((a,b) => {return a.value-b.value}).slice(-4).reverse();
+
+console.log(column3dData)
+console.log(bar3dData)
 
   return (
     <section className="section">
