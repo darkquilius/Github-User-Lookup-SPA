@@ -1,4 +1,4 @@
-##Personal Notes
+## Personal Notes
 
 This application allows users to look up other github users info and display it through a number of mediums using fusion charts. 
 
