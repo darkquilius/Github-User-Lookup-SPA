@@ -1,6 +1,6 @@
-## Deployed Site
+## Deployed Site and Mock User:
 
-## mock login:
+### site: https://github-user-lookup-spa.netlify.app/
 ### user: test@test.com
 ### pw:   Abcd1234
 
