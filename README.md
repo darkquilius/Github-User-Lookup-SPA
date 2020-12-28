@@ -1,3 +1,18 @@
+## Deployed Site and Mock User:
+
+### site: https://github-user-lookup-spa.netlify.app/
+### user: test@test.com
+### pw:   Abcd1234
+
+## Personal Notes
+
+This application allows users to look up other github users info and display it through a number of mediums using fusion charts. 
+
+Credit to John Smilga for design and lesson.
+
+Future updates would include intigrating github's graphQl API to get focused results and use less rate-limit.
+
+
 ## Starter Project
 
 - css provided (global styles, styled components)
